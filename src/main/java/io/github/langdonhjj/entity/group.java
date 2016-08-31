@@ -10,9 +10,11 @@ import java.util.Date;
  * 用户组别
  */
 @Data
-public class group implements Serializable {
+public class Group implements Serializable {
 
     private Long id;  //id
+
+    private Long userId; //用户ID
 
     private String groupName;  //用户所在组别
 

@@ -10,7 +10,7 @@ import java.util.Date;
  * 用户基础类
  */
 @Data
-public class users implements Serializable {
+public class Users implements Serializable {
 
     private Long id;  //id
 

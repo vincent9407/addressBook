@@ -18,8 +18,7 @@
         <javax.servlet-api.version>3.0.1</javax.servlet-api.version>
         <cglib-nodep.version>2.2.2</cglib-nodep.version>
         <terminus-common.version>1.2.2</terminus-common.version>
-        <pampas.version>2.7.BUILD-SNAPSHOT</pampas.version>
-        <parana.version>3.2.0-SNAPSHOT</parana.version>
+        <lombok.version>1.12.2</lombok.version>
     </properties>
 
     <dependencies>
@@ -92,9 +91,15 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.12.2</version>
+            <version>${lombok.version}</version>
         </dependency>
 
+        <!--mybatis-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
 
     </dependencies>
 
