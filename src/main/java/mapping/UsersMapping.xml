@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="io.github.langdonhjj.dao.UsersMapper">
+    <resultMap id="BaseResultMap" type="Users">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="username" property="userName" jdbcType="VARCHAR"/>
+        <result column="pwd" property="pwd" jdbcType="VARCHAR"/>
+        <result column="company" property="company" jdbcType="VARCHAR"/>
+        <result column="img" property="img" jdbcType="VARCHAR"/>
+        <result column="sex" property="sex" jdbcType="VARCHAR"/>
+        <result column="phonenumber" property="phoneNumber" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="birthday" property="birthday" jdbcType="TIMESTAMP"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="tb">
+        users
+    </sql>
+
+    <sql id="base_users">
+        id,username,company,phonenumber,created_at,updated_at
+    </sql>
+
+    <sql id="base_users_val">
+        #{id},#{username},#{company},#{phonenumber},now(),now()
+    </sql>
+
+    <insert id="insert" parameterType="Users" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO users (company,sex,phonenumber,address,birthday,email,created_at,updated_at)
+        VALUES
+        (#{company},#{sex},#{phonenumber},#{address},#{birthday},#{email},now(),now())
+    </insert>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.Lang.long">
+        SELECT
+        <include refid="base_users"/>
+        FROM
+        <include refid="tb"/>
+        WHERE id = #{id} LIMIT 1
+    </select>
+
+</mapper>

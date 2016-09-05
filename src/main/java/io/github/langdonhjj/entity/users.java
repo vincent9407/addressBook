@@ -16,7 +16,7 @@ public class Users implements Serializable {
 
     private String userName;  //用户姓名
 
-    private String pwd;  //用户姓名
+    private String pwd;  //用户密码
 
     private String company; //用户所在公司
 
